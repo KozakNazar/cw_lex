@@ -476,7 +476,7 @@ int main(int argc, char* argv[]){
 	char * text;
 	size_t sourceSize = loadSource(&text, parameters[INPUT_FILENAME_PARAMETER]);
 	if (!sourceSize){
-		printf("Press any key to continue . . .");
+		printf("Press Enter to exit . . .");
 		getchar();
 		return 0;
 	}
@@ -484,7 +484,7 @@ int main(int argc, char* argv[]){
 
 	if (!(mode & LEXICAL_ANALISIS_MODE)){
 		printf("NO SUPORTED MODE ...\r\n");
-		printf("Press any key to continue . . .");
+		printf("Press Enter to exit . . .");
 		getchar();
 		return 0;
 	}
@@ -505,7 +505,7 @@ int main(int argc, char* argv[]){
 	int commentRemoverResult = commentRemover(text, reservedLexemesForCommentSpace[0], reservedLexemesForCommentSpace[1], eofAlternativeCloseStrSpcType, explicitCloseStrSpc);
 	if (commentRemoverResult){
 		printf("Comment remover return %d\r\n", commentRemoverResult);
-		printf("Press any key to continue . . .");
+		printf("Press Enter to exit . . .");
 		getchar();
 		return 0;
 	}
@@ -522,7 +522,7 @@ int main(int argc, char* argv[]){
 		ifBadLexemeInfo.tokenType;
 		printf("Lexical analysis detected unexpected lexeme\r\n");
 		printLexemes(&ifBadLexemeInfo, 1);
-		printf("Press any key to continue . . .");
+		printf("Press Enter to exit . . .");
 		getchar();
 		return 0;
 	}
@@ -533,7 +533,7 @@ int main(int argc, char* argv[]){
 		printf("Lexical analysis complete success\r\n");
 	}
 
-	printf("Press any key to continue . . .");
+	printf("Press Enter to exit . . .");
 	getchar();
 
 #ifndef	USE_PREDEFINED_PARAMETERS
