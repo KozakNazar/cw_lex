@@ -350,7 +350,7 @@ struct LexemInfo runLexicalAnalysis(struct LexemInfo ** lastLexemInfoInTable, ch
 }
 
 
-int commentRemover(char * text = (char*)"", char * openStrSpc = (char*)"//", char * closeStrSpc = (char*)"\r\n", bool eofAlternativeCloseStrSpcType = true, bool explicitCloseStrSpc = false){
+int commentRemover(char * text = (char*)"", char * openStrSpc = (char*)"//", char * closeStrSpc = (char*)"\n", bool eofAlternativeCloseStrSpcType = true, bool explicitCloseStrSpc = false){
 	unsigned int commentSpace = 0;
 
 	unsigned int textLength = strlen(text);               // strnlen(text, MAX_TEXT_SIZE);
@@ -498,7 +498,7 @@ int main(int argc, char* argv[]){
 
 	bool eofAlternativeCloseStrSpcType = false;
 	bool explicitCloseStrSpc = true;
-	if (!strcmp(reservedLexemesForCommentSpace[1], "\r\n")){
+	if (!strcmp(reservedLexemesForCommentSpace[1], "\n")){
 		eofAlternativeCloseStrSpcType = true;
 		explicitCloseStrSpc = false;
 	}
